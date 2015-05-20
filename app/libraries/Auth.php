@@ -1,9 +1,7 @@
 <?php
 
 class Auth extends \Slim\Middleware
-
 {
-
     private $response = array();
 
     public function __construct()
@@ -20,8 +18,8 @@ class Auth extends \Slim\Middleware
         $password = $app->request()->post('password');
 
         if($this->checkLogin($email, $password)) {
-
-            $_SESSION['user'] = $email;
+            
+            $this->app->response->redirect('/');
 
         } else {
 
@@ -34,6 +32,7 @@ class Auth extends \Slim\Middleware
 
         if($email == 'lalo') {
 
+            $_SESSION['user'] = $email;
             return true;
         }
 
