@@ -2,6 +2,14 @@
 
 $app->get('/', function() use ($app) {
 	
-	$app->render('home.php');
+	$fecha = $app->date->now();
+
+	$app->render('home.php', [
+		'fecha' => $fecha
+		]);
+
+	echo "<pre>";
+	print_r (User::all()->toArray());
+	echo "</pre>";;
 
 })->name('home');

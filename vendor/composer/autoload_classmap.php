@@ -7,4 +7,5 @@ $baseDir = dirname($vendorDir);
 
 return array(
     'Auth' => $baseDir . '/app/libraries/Auth.php',
+    'User' => $baseDir . '/app/models/User.php',
 );

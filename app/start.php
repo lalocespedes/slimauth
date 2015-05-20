@@ -16,9 +16,17 @@ $app->config(array(
 	'cookies.secret_key' => 'secret'
 ));
 
+//db
+require '../app/config/db.php';
+
 //Views
 $view = $app->view();
 $view->setTemplatesDirectory('../app/views');
+
+//Singletons
+$app->container->singleton('date', function () {
+	return new Carbon\Carbon;
+});
 
 //inicia auth
 if(!isset($_SESSION['user'])) {
