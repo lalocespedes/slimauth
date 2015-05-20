@@ -30,7 +30,11 @@ class Auth extends \Slim\Middleware
 
     public function checkLogin($email, $password) {
 
-        if($email == 'lalo') {
+        //buscar usuario en la base datos
+
+        $q = User::where('username', '=', $email)->where('password', '=', $password)->get();
+
+        if(count($q) == 1) {
 
             $_SESSION['user'] = $email;
             return true;
