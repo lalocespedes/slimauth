@@ -6,5 +6,8 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
+    'Symfony\\Component\\Translation\\' => array($vendorDir . '/symfony/translation'),
     'Slim' => array($vendorDir . '/slim/slim'),
+    'Doctrine\\Common\\Inflector\\' => array($vendorDir . '/doctrine/inflector/lib'),
+    'Carbon' => array($vendorDir . '/nesbot/carbon/src'),
 );
