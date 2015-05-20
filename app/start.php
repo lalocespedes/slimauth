@@ -37,6 +37,8 @@ if(!isset($_SESSION['user'])) {
 	$app->add(new \Auth());
 }
 
+//verificar roles
+
 require('routes.php');
 
 $app->run();

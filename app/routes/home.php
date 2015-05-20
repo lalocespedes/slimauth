@@ -4,6 +4,8 @@ $app->get('/', function() use ($app) {
 	
 	$fecha = $app->date->now();
 
+	echo 'Hola '. $_SESSION["user"] .' ' . $_SESSION["role"];
+
 	//$nombre = '1234';
 
 	//echo $app->hash->create($nombre).'<br>';
@@ -13,9 +15,5 @@ $app->get('/', function() use ($app) {
 	$app->render('home.php', [
 		'fecha' => $fecha
 		]);
-
-	echo "<pre>";
-	print_r (User::all()->toArray());
-	echo "</pre>";;
 
 })->name('home');

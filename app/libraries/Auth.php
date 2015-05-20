@@ -26,6 +26,8 @@ class Auth extends \Slim\Middleware
             $app->render('sessions/login.php');
 
         }
+
+        //roles
     }
 
     public function checkLogin($email, $password) {
@@ -37,6 +39,7 @@ class Auth extends \Slim\Middleware
         if(count($q) == 1) {
 
             $_SESSION['user'] = $email;
+            $_SESSION['role'] = 1;
             return true;
         }
 
