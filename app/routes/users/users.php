@@ -1,9 +1,9 @@
 <?php
 
-$app->get('/users', function() use ($app) {
+$app->get('/users', authorize('admin'), function() use ($app) {
 	
 	echo "<pre>";
 	print_r (User::all()->toArray());
 	echo "</pre>";
 
-});	
+});

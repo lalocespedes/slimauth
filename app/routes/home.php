@@ -4,7 +4,10 @@ $app->get('/', function() use ($app) {
 	
 	$fecha = $app->date->now();
 
-	echo 'Hola '. $_SESSION["user"] .' ' . $_SESSION["role"];
+
+	echo "<pre>";
+	print_r ($_SESSION);
+	echo "</pre>";
 
 	//$nombre = '1234';
 

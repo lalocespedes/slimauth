@@ -38,8 +38,10 @@ class Auth extends \Slim\Middleware
 
         if(count($q) == 1) {
 
-            $_SESSION['user'] = $email;
-            $_SESSION['role'] = 1;
+            $user = array("user"=>$email, "firstName"=>"Eduardo", "lastName"=>"Cespedes", "role"=>"admin");
+            
+            $_SESSION['user'] = $user;
+
             return true;
         }
 
