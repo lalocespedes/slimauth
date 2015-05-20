@@ -28,6 +28,10 @@ $app->container->singleton('date', function () {
 	return new Carbon\Carbon;
 });
 
+$app->container->singleton('hash', function () {
+	return new Hash;
+});
+
 //inicia auth
 if(!isset($_SESSION['user'])) {
 	$app->add(new \Auth());
