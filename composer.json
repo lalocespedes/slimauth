@@ -1,0 +1,11 @@
+{
+    "require": {
+        "slim/slim": "~2.0"
+    },
+    "autoload": {
+        "classmap": [
+        	"app/models",
+        	"app/libraries"
+         ]
+    }
+}
