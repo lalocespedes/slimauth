@@ -34,11 +34,11 @@ class Auth extends \Slim\Middleware
 
         //buscar usuario en la base datos
 
-        $q = User::where('username', '=', $email)->where('password', '=', $password)->get();
+        $q = User::where('username', '=', $email)->where('password', '=', $password)->first();
 
         if(count($q) == 1) {
 
-            $user = array("user"=>$email, "firstName"=>"Eduardo", "lastName"=>"Cespedes", "role"=>"admin");
+            $user = array("user"=>$email, "name"=>$q->name, "role"=>$q->rol);
             
             $_SESSION['user'] = $user;
 

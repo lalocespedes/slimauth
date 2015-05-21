@@ -44,7 +44,6 @@ function authorize($role = "user") {
         $app = \Slim\Slim::getInstance();
         // First, check to see if the user is logged in at all
         if(!empty($_SESSION['user'])) {
-
             // Next, validate the role to make sure they can access the route
             // We will assume admin role can access everything
             if($_SESSION['user']['role'] == $role || $_SESSION['user']['role'] == 'admin') {
