@@ -32,10 +32,9 @@ $app->container->singleton('hash', function () {
 	return new Hash;
 });
 
+$headers = apache_request_headers();
 //inicia auth
-if(!isset($_SESSION['user'])) {
-	$app->add(new \Auth());
-}
+$app->add(new \Auth());
 
 //verificar roles
 function authorize($role = "user") {

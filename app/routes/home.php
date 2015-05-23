@@ -4,11 +4,6 @@ $app->get('/', function() use ($app) {
 	
 	$fecha = $app->date->now();
 
-
-	echo "<pre>";
-	print_r ($_SESSION);
-	echo "</pre>";
-
 	//$nombre = '1234';
 
 	//echo $app->hash->create($nombre).'<br>';
@@ -18,5 +13,9 @@ $app->get('/', function() use ($app) {
 	$app->render('home.php', [
 		'fecha' => $fecha
 		]);
+
+	echo "<pre>";
+	print_r ($_SESSION);
+	echo "</pre>";
 
 })->name('home');
